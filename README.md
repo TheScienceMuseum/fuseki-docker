@@ -1,6 +1,6 @@
 # fuseki-docker
 
-Docker image for Apache Jena's [Fuseki](https://jena.apache.org/documentation/fuseki2/) (v2) triplestore server. Fork of [AtomGraph/fuseki-docker](https://github.com/AtomGraph/fuseki-docker)
+Docker image for Apache Jena's [Fuseki](https://jena.apache.org/documentation/fuseki2/) triplestore server. Fork of [AtomGraph/fuseki-docker](https://github.com/AtomGraph/fuseki-docker)
 
 ## Usage (local)
 
