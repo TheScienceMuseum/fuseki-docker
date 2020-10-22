@@ -1,6 +1,6 @@
 # fuseki-docker
 
-fork of [AtomGraph/fuseki-docker](https://github.com/AtomGraph/fuseki-docker)
+Docker image for Apache Jena's [Fuseki](https://jena.apache.org/documentation/fuseki2/) (v2) triplestore server. Fork of [AtomGraph/fuseki-docker](https://github.com/AtomGraph/fuseki-docker)
 
 ## Usage (local)
 
@@ -11,6 +11,8 @@ docker build . -t fuseki
 ```
 
 ### To run:
+
+Arguments after the image name (`fuseki`) become arguments to the [Fuseki server (no UI)](https://jena.apache.org/documentation/fuseki2/fuseki-run.html#fuseki-server). As the name explains, this server version _does not include the user interface_.
 
 Dataset from file `data.nt` (which is mounted as part of the current directory), with dataset path `/ds`:
 
@@ -23,6 +25,12 @@ Help (all run options explained):
 ``` bash
 docker run --rm fuseki --help
 ```
+
+## Usage (from Docker hub)
+
+The image is available on Docker hub at [kalyandutia/fuseki-docker](https://hub.docker.com/repository/docker/kalyandutia/fuseki-docker/general).
+
+Same as above, but substitute image name `fuseki` for `kalyandutia/fuseki-docker`.
 
 ## Endpoints
 
