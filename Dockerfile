@@ -8,7 +8,7 @@ LABEL maintainer="The Apache Jena community <users@jena.apache.org>"
 ARG VERSION=3.16.0
 
 # data
-ENV DATA_URL=https://heritageconnector.s3.eu-west-2.amazonaws.com/rdf/hc_dump_latest.nt
+ENV DATA_URL=<URL-to-nt-file-goes-here>
 ENV DATA_FILE=/mnt/heritageconnector.nt
 RUN curl -L $DATA_URL > $DATA_FILE
 
