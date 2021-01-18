@@ -7,18 +7,16 @@ Docker image for Apache Jena's [Fuseki](https://jena.apache.org/documentation/fu
 ### To build:
 
 ``` bash
-docker build . -t fuseki
+docker build --no-cache . -t fuseki
 ```
 
 ### To run:
 
-Arguments after the image name (`fuseki`) become arguments to the [Fuseki server (no UI)](https://jena.apache.org/documentation/fuseki2/fuseki-run.html#fuseki-server). As the name explains, this server version _does not include the user interface_.
-
-Dataset from file `data.nt` (which is mounted as part of the current directory), with dataset path `/ds`:
-
 ``` bash
-docker run --rm -p 3030:3030 -v $(pwd):/usr/share/data fuseki --file=/usr/share/data/data.nt /ds
+docker run -p 3030:3030 fuseki
 ```
+
+We use the `-d` and `--restart=always` flags to detach the Fuseki instance and make it automatically restart if the database crashes.
 
 Help (all run options explained):
 
@@ -26,13 +24,7 @@ Help (all run options explained):
 docker run --rm fuseki --help
 ```
 
-## Usage (from Docker hub)
-
-The image is available on Docker hub at [kalyandutia/fuseki-docker](https://hub.docker.com/repository/docker/kalyandutia/fuseki-docker/general).
-
-Same as above, but substitute image name `fuseki` for `kalyandutia/fuseki-docker`.
-
-## Endpoints
+## Fuseki Endpoints
 
 In the following examples which use `/ds` as the dataset path, these main endpoints are available:
 
