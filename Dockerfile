@@ -24,4 +24,5 @@ RUN curl --silent --show-error --output fuseki-server.jar $URL
 
 EXPOSE 3030
 
-ENTRYPOINT [ "/usr/bin/java", "-Xms2g" ,"-Xmx8g", "-XX:-UseGCOverheadLimit", "-XX:+UseParallelGC", "-jar", "fuseki-server.jar", "-v", "--debug", "--file=/mnt/heritageconnector.nt", "/heritage-connector"]
+# -Xms{mem} = starting memory; -Xmx{mem} = max memory
+ENTRYPOINT [ "/usr/bin/java", "-Xms4g" ,"-Xmx8g", "-XX:-UseGCOverheadLimit", "-XX:+UseParallelGC", "-jar", "fuseki-server.jar", "-v", "--debug", "--file=/mnt/heritageconnector.nt", "/heritage-connector"]
